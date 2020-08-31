@@ -5,7 +5,7 @@
         <div class="col-5 text-center principal-news">
           <h2>Veja os últimos resultados</h2>
         </div>
-        <div class="col-5 offset-2 text-center principal-news">
+        <div class="col-5 text-center principal-news offset-2">
           <h2>
             Você esta convidado a conhecer o centro de treinamentos da HCode
           </h2>
@@ -28,8 +28,12 @@ section {
   height: 300px;
 }
 
+.container .row .col-5 {
+  height: 310px;
+}
+
 .container .row .col-5:first-child {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   background-image: url('../assets/football.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
