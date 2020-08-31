@@ -15,7 +15,21 @@
         <div class="links mr-2">
           <a href="#" class="btn mr-5">Inicio</a>
           <a href="#" class="btn mr-5">Times</a>
-          <a href="#" class="btn mr-5">Classificação</a>
+          <a href="#" class="btn mr-5">Classificações</a>
+          <select
+            name="championship"
+            id="select-championship"
+            class="form-control"
+            @change="$emit('select-championship', $event.target.value)"
+          >
+            <option value="">Selecione um campeonato</option>
+            <option
+              v-for="(camp, index) in campeonato"
+              v-bind:key="index"
+              :value="camp"
+              >{{ camp }}</option
+            >
+          </select>
         </div>
       </nav>
     </div>
@@ -23,7 +37,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      campeonato: [
+        'Campeonato Brasileiro',
+        'Campeonato Espanhol',
+        'Campeonato Inglês',
+        'Campeonato Italiano',
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>

@@ -12,7 +12,7 @@
         possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
         excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
         culpa nam enim?"
-        news-date="01/01/2020"
+        news-data="01/01/2020"
       />
 
       <HcodeSectionNewsIndividual
@@ -26,7 +26,7 @@
         possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
         excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
         culpa nam enim?"
-        news-date="01/03/2020"
+        news-data="01/03/2020"
       />
       <HcodeSectionNewsIndividual
         img-name="news3.jpg"
@@ -39,7 +39,7 @@
         possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
         excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
         culpa nam enim?"
-        news-date="01/03/2020"
+        news-data="01/03/2020"
       />
     </div>
   </section>

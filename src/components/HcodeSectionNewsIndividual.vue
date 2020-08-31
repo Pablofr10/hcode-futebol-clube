@@ -6,7 +6,7 @@
     <div class="col-9">
       <h2>{{ newsTitle }}</h2>
 
-      <p>{{ newsContent }}</p>
+      <p>{{ newsContent | truncate(200) }}</p>
 
       <span class="font-italic"> {{ newsData }} </span>
     </div>
