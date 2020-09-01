@@ -13,8 +13,18 @@
         </a>
 
         <div class="links mr-2">
-          <a href="#" class="btn mr-5">Inicio</a>
-          <a href="#" class="btn mr-5">Times</a>
+          <a
+            href="#"
+            @click.prevent="$emit('change-component', 'home')"
+            class="btn mr-5"
+            >Inicio</a
+          >
+          <a
+            href="#"
+            @click.prevent="$emit('change-component', 'news')"
+            class="btn mr-5"
+            >Notícias</a
+          >
           <a href="#" class="btn mr-5">Classificações</a>
           <select
             name="championship"

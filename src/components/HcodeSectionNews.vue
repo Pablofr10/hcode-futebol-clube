@@ -1,15 +1,18 @@
 <template>
   <section>
     <div class="container">
-      <div v-for="nv in news" :key="nv.id">
-        <HcodeSectionNewsIndividual
-          :img-name="nv.img"
-          :img-info="nv.imgDesc"
-          :news-title="nv.titulo"
-          :news-data="nv.date"
-          :news-content="nv.conteudo"
-        />
-      </div>
+      <HcodeSectionNewsIndividual
+        v-for="nv in news"
+        :key="nv.id"
+        :img-name="nv.img"
+        :img-info="nv.imgDesc"
+        :news-data="nv.date"
+      >
+        <template #title>
+          <h2>{{ nv.titulo }}</h2>
+        </template>
+        <p>{{ nv.conteudo | truncate(200) }}</p>
+      </HcodeSectionNewsIndividual>
     </div>
   </section>
 </template>
@@ -52,7 +55,7 @@ export default {
         possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
         excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
         culpa nam enim?`,
-        date: '01/03/2020',
+        date: '2020-01-18',
         img: 'news2.jpg',
         imgDesc: 'Notícia 2',
       },

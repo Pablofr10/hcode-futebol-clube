@@ -5,8 +5,8 @@
         <h3>Você está vendo notícias do Campeonato {{ championship }}.</h3>
       </div>
     </div>
-    <HcodeSectionBanner />
-    <HcodeSectionNews />
+
+    <component :is="currentComponent"></component>
 
     <div class="container">
       <div class="row my-club mt-5">
@@ -23,13 +23,12 @@
 
 <script>
 import HcodeSectionBanner from './HcodeSectionBanner';
-import HcodeSectionNews from './HcodeSectionNews';
 import HcodeInput from './HcodeInput';
 
 export default {
   components: {
     HcodeSectionBanner,
-    HcodeSectionNews,
+    HcodeSectionNews: () => import('./HcodeSectionNews'),
     HcodeInput,
   },
   data() {
@@ -39,6 +38,7 @@ export default {
   },
   props: {
     championship: String,
+    currentComponent: String,
   },
 };
 </script>
