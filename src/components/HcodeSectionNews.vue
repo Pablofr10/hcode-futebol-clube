@@ -1,46 +1,15 @@
 <template>
   <section>
     <div class="container">
-      <HcodeSectionNewsIndividual
-        img-name="news1.jpg"
-        img-info="Notícia 1"
-        news-title="Começamos os treinos para a nova temporada."
-        news-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim magni
-        ipsam optio praesentium rem, ad repellat officiis corrupti quos natus
-        hic, tenetur culpa soluta. Deserunt deleniti quisquam ex atque sed.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis fugiat
-        possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
-        excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
-        culpa nam enim?"
-        news-data="01/01/2020"
-      />
-
-      <HcodeSectionNewsIndividual
-        img-name="news2.jpg"
-        img-info="Notícia 2"
-        news-title="Jogo de quarta feira termina empatado."
-        news-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim magni
-        ipsam optio praesentium rem, ad repellat officiis corrupti quos natus
-        hic, tenetur culpa soluta. Deserunt deleniti quisquam ex atque sed.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis fugiat
-        possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
-        excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
-        culpa nam enim?"
-        news-data="01/03/2020"
-      />
-      <HcodeSectionNewsIndividual
-        img-name="news3.jpg"
-        img-info="Notícia 3"
-        news-title="A inauguração do estágio foi um sucesso."
-        news-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim magni
-        ipsam optio praesentium rem, ad repellat officiis corrupti quos natus
-        hic, tenetur culpa soluta. Deserunt deleniti quisquam ex atque sed.
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis fugiat
-        possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
-        excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
-        culpa nam enim?"
-        news-data="01/03/2020"
-      />
+      <div v-for="nv in news" :key="nv.id">
+        <HcodeSectionNewsIndividual
+          :img-name="nv.img"
+          :img-info="nv.imgDesc"
+          :news-title="nv.titulo"
+          :news-data="nv.date"
+          :news-content="nv.conteudo"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -51,6 +20,57 @@ import HcodeSectionNewsIndividual from './HcodeSectionNewsIndividual';
 export default {
   components: {
     HcodeSectionNewsIndividual,
+  },
+  data() {
+    return {
+      news: [],
+    };
+  },
+  created() {
+    this.news = [
+      {
+        id: 1,
+        titulo: 'Futebol está de volta as terças.',
+        conteudo: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim magni
+        ipsam optio praesentium rem, ad repellat officiis corrupti quos natus
+        hic, tenetur culpa soluta. Deserunt deleniti quisquam ex atque sed.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis fugiat
+        possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
+        excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
+        culpa nam enim?`,
+        date: '2020-01-01',
+        img: 'news1.jpg',
+        imgDesc: 'Notícia 1',
+      },
+      {
+        id: 2,
+        titulo: 'Jogo de quarta feira termina empatado.',
+        conteudo: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim magni
+        ipsam optio praesentium rem, ad repellat officiis corrupti quos natus
+        hic, tenetur culpa soluta. Deserunt deleniti quisquam ex atque sed.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis fugiat
+        possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
+        excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
+        culpa nam enim?`,
+        date: '01/03/2020',
+        img: 'news2.jpg',
+        imgDesc: 'Notícia 2',
+      },
+      {
+        id: 3,
+        titulo: 'A inauguração do estádio foi um sucesso.',
+        conteudo: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim magni
+        ipsam optio praesentium rem, ad repellat officiis corrupti quos natus
+        hic, tenetur culpa soluta. Deserunt deleniti quisquam ex atque sed.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis fugiat
+        possimus temporibus. Voluptas accusantium, ullam consectetur error dolor
+        excepturi autem fuga obcaecati aspernatur dolore, ut, deserunt expedita
+        culpa nam enim?`,
+        date: '2020-02-04',
+        img: 'news3.jpg',
+        imgDesc: 'Notícia 3',
+      },
+    ];
   },
 };
 </script>
