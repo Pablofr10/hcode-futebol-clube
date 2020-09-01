@@ -26,7 +26,6 @@ export default {
   },
   data() {
     return {
-      championship: 'Campeonato Brasileiro',
       currentSectionComponent: 'HcodeSectionBanner',
     };
   },
