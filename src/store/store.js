@@ -1,19 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import championshipModule from './modules/championshipModule';
+import clubNameModule from './modules/clubNameModule';
+import newsModule from './modules/newsModule';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    championship: 'Campeonato Brasileiro',
-    clubName: 'Hcode Treinamentos',
-  },
-  getters: {
-    getChampionship(state) {
-      return state.championship;
-    },
-    getClubName(state) {
-      return state.clubName;
-    },
+  modules: {
+    championshipModule,
+    clubNameModule,
+    newsModule,
   },
 });

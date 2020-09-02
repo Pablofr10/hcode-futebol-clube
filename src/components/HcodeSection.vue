@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="row mt-5">
-        <h3>Você está vendo notícias do Campeonato {{ championship }}.</h3>
+        <h3>Você está vendo notícias do {{ championship }}.</h3>
       </div>
     </div>
 
@@ -14,7 +14,7 @@
           <h2>Seu clube é: {{ myClub }}</h2>
         </div>
         <div class="col-6">
-          <HcodeInput v-model="myClub" />
+          <HcodeInput />
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ export default {
   computed: {
     ...mapGetters({
       championship: 'getChampionship',
-      myClube: 'getClubName',
+      myClub: 'getClubName',
     }),
   },
 };

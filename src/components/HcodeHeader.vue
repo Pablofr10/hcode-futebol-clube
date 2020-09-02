@@ -32,7 +32,6 @@
             class="form-control"
             @change="$emit('select-championship', $event.target.value)"
           >
-            <option value="">Selecione um campeonato</option>
             <option
               v-for="(camp, index) in campeonato"
               v-bind:key="index"
