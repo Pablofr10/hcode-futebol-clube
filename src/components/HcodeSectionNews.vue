@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="section-news">
     <div class="container">
       <HcodeSectionNewsIndividual
         v-for="nv in news"
@@ -9,7 +9,7 @@
         :news-data="nv.date"
       >
         <template #title>
-          <h2>{{ nv.titulo }}</h2>
+          <h2 @click="goToPage('/notice')">{{ nv.titulo }}</h2>
         </template>
         <p>{{ nv.conteudo | truncate(200) }}</p>
       </HcodeSectionNewsIndividual>
@@ -33,11 +33,16 @@ export default {
       news: 'getNews',
     }),
   },
+  methods: {
+    goToPage(page) {
+      this.$router.push(page);
+    },
+  },
 };
 </script>
 
-<style scoped>
-section {
+<style>
+.section-news {
   padding: 50px 0;
   margin-top: 25px;
   background-color: orange;
