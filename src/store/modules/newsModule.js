@@ -49,5 +49,10 @@ export default {
     getNews(state) {
       return state.news;
     },
+    getNewsFromId: (state) => (id) => {
+      let notice = state.news.find((item) => item.id == id);
+
+      return notice;
+    },
   },
 };
