@@ -30,6 +30,15 @@ export default {
     },
   },
   mixins: [UtilsMixins],
+  beforeRouteEnter: (to, from, next) => {
+    console.log(to);
+    let params = to.params;
+
+    if (!parseInt(params.id) > 0) {
+      next('/');
+    }
+    next();
+  },
 };
 </script>
 
